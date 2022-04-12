@@ -6,3 +6,5 @@
 /src/dotnet-aws-integration/.vs/dotnet-aws-integration/v17
 /src/dotnet-aws-integration/bin/Debug/net6.0
 /src/dotnet-aws-integration/obj
+/src/dotnet-aws-console-app/bin/Debug/net6.0
+/src/dotnet-aws-console-app/obj
