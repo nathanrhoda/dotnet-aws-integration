@@ -8,3 +8,4 @@
 /src/dotnet-aws-integration/obj
 /src/dotnet-aws-console-app/bin/Debug/net6.0
 /src/dotnet-aws-console-app/obj
+/src/dotnet-aws-integration/bin/Debug/netstandard2.1
