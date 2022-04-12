@@ -1,0 +1,8 @@
+﻿################################################################################
+# This .gitignore file was automatically created by Microsoft(R) Visual Studio.
+################################################################################
+
+/.vs
+/src/dotnet-aws-integration/.vs/dotnet-aws-integration/v17
+/src/dotnet-aws-integration/bin/Debug/net6.0
+/src/dotnet-aws-integration/obj
