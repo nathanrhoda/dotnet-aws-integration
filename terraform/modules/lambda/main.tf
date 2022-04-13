@@ -2,14 +2,14 @@ data "aws_caller_identity" "current" {}
 data "aws_region" "current" {}
 
 
-# resource "aws_lambda_permission" "apigw_lambda" {
-#   statement_id  = "AllowExecutionFromAPIGateway"
-#   action        = "lambda:InvokeFunction"
-#   function_name = aws_lambda_function.node_lambda.function_name
-#   principal     = "apigateway.amazonaws.com"
+resource "aws_lambda_permission" "apigw_lambda" {
+  statement_id  = "AllowExecutionFromAPIGateway"
+  action        = "lambda:InvokeFunction"
+  function_name = aws_lambda_function.node_lambda.function_name
+  principal     = "apigateway.amazonaws.com"
   
-#   source_arn = "arn:aws:execute-api:${data.aws_region.current.name}:${data.aws_caller_identity.current.account_id}:${aws_api_gateway_rest_api.api.id}/*/${aws_api_gateway_method.method.http_method}${aws_api_gateway_resource.resource.path}"
-# }
+  source_arn = "arn:aws:execute-api:${data.aws_region.current.name}:${data.aws_caller_identity.current.account_id}:${var.apigw_api_id}/*/${var.apigw_http_method}${var.apigw_resource_path}"
+}
 
 
 data "archive_file" "zip" {
