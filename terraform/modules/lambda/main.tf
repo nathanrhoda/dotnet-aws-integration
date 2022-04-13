@@ -40,8 +40,8 @@ data "aws_region" "current" {}
 
 data "archive_file" "zip" {
   type        = "zip"
-  source_file = "modules/lambda/function/${var.lambda_name}.js"
-  output_path = "modules/lambda/function/${var.lambda_name}.zip"
+  source_file = "modules/lambda/functions/${var.lambda_name}.js"
+  output_path = "modules/lambda/functions/${var.lambda_name}.zip"
 }
 
 data "aws_iam_policy_document" "policy" {
@@ -84,8 +84,8 @@ resource "aws_iam_role_policy" "lambda_invoke_role_policy" {
 
 data "archive_file" "node_zip" {
   type        = "zip"
-  source_file = "modules/lambda/function/${var.lambda_name}.js"
-  output_path = "modules/lambda/function/${var.lambda_name}.zip"
+  source_file = "modules/lambda/functions/${var.lambda_name}.js"
+  output_path = "modules/lambda/functions/${var.lambda_name}.zip"
 }
 
 resource "aws_lambda_function" "node_lambda" {

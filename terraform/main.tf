@@ -12,3 +12,7 @@ module "api-gateway" {
   source = "./modules/apigateway"
   api_gateway_name = "${var.api_gateway_name}"
 }
+
+output api_gateway_id{
+  value = module.api-gateway.api_gateway_api_id
+}
