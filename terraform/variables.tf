@@ -7,3 +7,8 @@ variable "queue_name" {
   description = "The queue name"
   default     = "nathan-queue"
 }
+
+variable "lambda_name" {
+  description = "The name of the lambda to create"
+  default     = "nathan-lambda"
+}
