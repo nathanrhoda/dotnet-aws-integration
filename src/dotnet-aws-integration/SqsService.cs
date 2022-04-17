@@ -3,7 +3,7 @@ using Amazon.SQS.Model;
 using System;
 using System.Threading.Tasks;
 
-namespace dotnet_aws_sqs
+namespace dotnet_aws_integration
 {
     public static class SqsService
     {
