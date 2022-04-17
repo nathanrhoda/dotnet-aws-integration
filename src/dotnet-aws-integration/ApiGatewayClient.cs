@@ -8,16 +8,16 @@ namespace dotnet_aws_integration
 {
     public class ApiGatewayClient
     {
-        private readonly HttpClient _htppClient;
-        public ApiGatewayClient(HttpClient _htppClient)
+        private readonly IHttpClientFactory _clientFactory;
+        public ApiGatewayClient(IHttpClientFactory clientFactory)
         {
-            this._htppClient = _htppClient;
+            _clientFactory = clientFactory;
         }
 
         public async Task<HttpResponseMessage> Post()
-        { 
-            var url = "https://0z89x3ti55.execute-api.af-south-1.amazonaws.com/dev/nathanresource";
-            return await _htppClient.SendAsync(new HttpRequestMessage(HttpMethod.Post, url));            
+        {
+            var client = _clientFactory.CreateClient("ApiGateway");
+            return await client.SendAsync(new HttpRequestMessage(HttpMethod.Post, ""));                        
         }
     }
 }

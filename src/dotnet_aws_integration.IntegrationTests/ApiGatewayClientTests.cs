@@ -11,7 +11,7 @@ namespace dotnet_aws_integration.IntegrationTests
     [TestClass]
     public class ApiGatewayClientTests
     {
-        protected static IHttpClientFactory _clientFactory;
+        protected IHttpClientFactory _clientFactory;
         protected IConfiguration _configuration;
         protected IServiceCollection _serviceCollection;
 
@@ -34,14 +34,15 @@ namespace dotnet_aws_integration.IntegrationTests
 
         [TestMethod]
         public async Task ApiGatewayClient_Post_Returns200()
-        {
-            var client = _clientFactory.CreateClient("ApiGateway");
-            var response = await client.SendAsync(new HttpRequestMessage(HttpMethod.Post, ""));
+        {            
+            var apiGatewayClient = new ApiGatewayClient(_clientFactory);
+            var response = await apiGatewayClient.Post();
+
             var jsonResult = await response.Content.ReadAsStringAsync();
             var result = JsonConvert.DeserializeObject(jsonResult).ToString();
 
             Assert.AreEqual(HttpStatusCode.OK, response.StatusCode);
-            Assert.IsNotNull("Hello Nathan", result);
+            Assert.AreEqual("Hello Nathan", result);
         }
     }
 }
