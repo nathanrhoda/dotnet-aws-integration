@@ -1,3 +1,7 @@
+module "iam" {
+  source = "./modules/iam"
+}
+
 module "sqs" {
   source = "./modules/sqs"
   queue_name = "${var.queue_name}"
@@ -6,6 +10,7 @@ module "sqs" {
 module "api-gateway" {
   source = "./modules/apigateway"
   api_gateway_name = "${var.api_gateway_name}"  
+  cloudwatch_role_arn = module.iam.iam_cloudwatch_role_arn  
 }
 
 module "lambda" {
