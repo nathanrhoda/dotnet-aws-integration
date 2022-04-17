@@ -3,9 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.1.32228.430
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "dotnet-aws-console-app", "..\dotnet-aws-console-app\dotnet-aws-console-app.csproj", "{EF4CEAC4-3049-4B4C-AE0B-1BA20F567E76}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "dotnet-aws-console-app", "..\dotnet-aws-console-app\dotnet-aws-console-app.csproj", "{EF4CEAC4-3049-4B4C-AE0B-1BA20F567E76}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "dotnet-aws-integration", "dotnet-aws-integration.csproj", "{693C589A-77BB-4018-99AE-16802682E351}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "dotnet_aws_integration.IntegrationTests", "..\dotnet_aws_integration.IntegrationTests\dotnet_aws_integration.IntegrationTests.csproj", "{F857D8FB-06A6-4E2F-8DB4-D2CDD6808438}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,10 @@ Global
 		{693C589A-77BB-4018-99AE-16802682E351}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{693C589A-77BB-4018-99AE-16802682E351}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{693C589A-77BB-4018-99AE-16802682E351}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F857D8FB-06A6-4E2F-8DB4-D2CDD6808438}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F857D8FB-06A6-4E2F-8DB4-D2CDD6808438}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F857D8FB-06A6-4E2F-8DB4-D2CDD6808438}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F857D8FB-06A6-4E2F-8DB4-D2CDD6808438}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -11,3 +11,6 @@
 /src/dotnet-aws-integration/bin/Debug/netstandard2.1
 src/dotnet-aws-integration/.vs/dotnet-aws-integration/DesignTimeBuild/.dtbcache.v2
 terraform/modules/lambda/function/nathan-lambda.zip
+/src/dotnet_aws_integration.IntegrationTests/bin/Debug/net6.0
+/src/dotnet_aws_integration.IntegrationTests/obj
+/src/dotnet-aws-integration/.vs/dotnet-aws-integration/config
