@@ -1,16 +1,23 @@
 data "aws_caller_identity" "current" {}
 data "aws_region" "current" {}
 
+resource "aws_api_gateway_integration" "NathanIntegration" {  
+  rest_api_id             = "${var.apigw_api_id}"
+  resource_id             = "${var.apigw_resource_id}"
+  http_method             = "${var.apigw_http_method}"
+  integration_http_method = "POST"
+  type                    = "AWS_PROXY"
+  uri                     = aws_lambda_function.node_lambda.invoke_arn
+}
 
 resource "aws_lambda_permission" "apigw_lambda" {
   statement_id  = "AllowExecutionFromAPIGateway"
   action        = "lambda:InvokeFunction"
   function_name = aws_lambda_function.node_lambda.function_name
   principal     = "apigateway.amazonaws.com"
-  
-  source_arn = "arn:aws:execute-api:${data.aws_region.current.name}:${data.aws_caller_identity.current.account_id}:${var.apigw_api_id}/*/${var.apigw_http_method}${var.apigw_resource_path}"
+    
+  source_arn = "arn:aws:execute-api:${data.aws_region.current.name}:${data.aws_caller_identity.current.account_id}:${var.apigw_api_id}/*/${var.apigw_http_method}${var.apigw_resource_path}"  
 }
-
 
 data "archive_file" "zip" {
   type        = "zip"

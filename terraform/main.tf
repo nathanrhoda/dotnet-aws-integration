@@ -11,7 +11,8 @@ module "api-gateway" {
 module "lambda" {
   source = "./modules/lambda"
   lambda_name = "${var.lambda_name}"
-  apigw_api_id = module.api-gateway.api_gateway_root_resource_id
+  apigw_api_id = module.api-gateway.api_gateway_api_id
   apigw_http_method = module.api-gateway.api_gateway_method
   apigw_resource_path = module.api-gateway.api_gateway_resource_path
+  apigw_resource_id = module.api-gateway.api_gateway_resource_id
 }

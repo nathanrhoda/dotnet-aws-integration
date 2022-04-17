@@ -4,7 +4,7 @@ output "api_gateway_api_id" {
 }
 
 output "api_gateway_root_resource_id" {
-    description = "Api id for the Api Gateway"
+    description = "Root resource id for the Api Gateway"
     value       = aws_api_gateway_rest_api.NathanAPI.root_resource_id
 }
 
@@ -18,3 +18,7 @@ output "api_gateway_resource_path" {
   value = aws_api_gateway_resource.NathanResource.path
 }
 
+output "api_gateway_resource_id" {
+  description = "Resource Id"
+  value = aws_api_gateway_resource.NathanResource.id
+}

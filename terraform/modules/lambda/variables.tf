@@ -20,3 +20,9 @@ variable apigw_resource_path {
   description = "Api Gateway Resource Path"
   type = string
 }
+
+variable apigw_resource_id {
+  //${aws_api_gateway_resource.resource.id}
+  description = "Api Gateway Resource Path"
+  type = string
+}
