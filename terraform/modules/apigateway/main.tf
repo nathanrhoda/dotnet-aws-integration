@@ -1,13 +1,6 @@
 data "aws_caller_identity" "current" {}
 data "aws_region" "current" {}
 
-# data "terraform_remote_state" "lambda" {
-#   backend = "local"
-
-#   config = {
-#     path = "${path.module}/../../terraform.tfstate"
-#   }
-# }
 resource "aws_api_gateway_rest_api" "NathanAPI" {
   name        = "${var.api_gateway_name}"
   description = "This is my API "
