@@ -28,10 +28,10 @@ resource "aws_api_gateway_method" "NathanMethod" {
 
 resource "aws_api_gateway_deployment" "NathanDeployment" {
   rest_api_id = aws_api_gateway_rest_api.NathanAPI.id
-  depends_on = ["aws_api_gateway_method.NathanMethod"]
+  depends_on = [aws_api_gateway_method.NathanMethod]
 
   triggers = {
-    redeployment = sha1(jsonencode(aws_api_gateway_rest_api.NathanAPI.body))
+    redeployment = sha1(jsonencode(aws_api_gateway_rest_api.NathanAPI))
   }
 
   lifecycle {

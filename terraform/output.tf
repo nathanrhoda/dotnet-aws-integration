@@ -16,3 +16,8 @@ output "api_gateway_resource_path" {
   description = "Gateway Resource Path"
   value = module.api-gateway.api_gateway_resource_path
 }
+
+output "sqs-queue-arn" {
+  description = "SQS Arn"
+  value = module.sqs.sqs-arn
+}

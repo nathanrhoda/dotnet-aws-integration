@@ -5,7 +5,7 @@ variable "aws_region" {
 
 variable "queue_name" {
   description = "The queue name"
-  default     = "nathan-queue"
+  default     = "nathan_queue.fifo"
 }
 
 variable "lambda_name" {
