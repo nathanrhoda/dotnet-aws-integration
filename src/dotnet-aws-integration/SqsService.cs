@@ -24,6 +24,23 @@ namespace dotnet_aws_integration
                 }
             } while (!Console.KeyAvailable);
         }
+
+        public static async Task<string> CreateQueueAsync(string requestQueue)
+        {
+            var uniqueIdentifier = Guid.NewGuid().ToString();
+
+            var queueName = $"{requestQueue}";
+            var sqsClient = new AmazonSQSClient();
+
+            CreateQueueRequest createQueueRequest = new CreateQueueRequest(queueName);            
+
+            var responseQueueUrl = await sqsClient.CreateQueueAsync(createQueueRequest);
+
+            return responseQueueUrl.QueueUrl;
+            
+        }
+
+
         //
         // Method to read a message from the given queue
         // In this example, it gets one message at a time

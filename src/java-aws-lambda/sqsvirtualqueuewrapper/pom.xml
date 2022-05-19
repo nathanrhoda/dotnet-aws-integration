@@ -25,14 +25,26 @@
       <version>4.11</version>
       <scope>test</scope>
     </dependency>
-    <dependency>
+    <!-- <dependency>
       <groupId>com.amazonaws</groupId>
       <artifactId>amazon-sqs-java-temporary-queues-client</artifactId>
-      <version>2.0.0</version>
+      <version>1.0.0</version>
       <type>jar</type>
-    </dependency>
+    </dependency> -->
+    <dependency>    
+      <groupId>com.java_virtual_queue_layer</groupId>
+      <artifactId>java_virtual_queue_layer</artifactId>
+      <version>5</version>
+      <scope>provided</scope>
+		</dependency>
   </dependencies>
-
+  <!-- <repositories>
+    <repository>
+      <id>project.local</id>
+      <name>project</name>
+      <url>file:C:\Users\natha\.m2\repository</url>
+    </repository>
+  </repositories> -->
   <build>
    <finalName>sqs-virtualqueue-wrapper</finalName>
     <pluginManagement><!-- lock down plugins versions to avoid using Maven defaults (may be moved to parent pom) -->
