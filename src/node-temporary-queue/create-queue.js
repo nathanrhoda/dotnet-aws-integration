@@ -10,20 +10,19 @@ exports.handler = function (event, context, callback) {
         var createParams = {
             QueueName: `temporaryQueue_${reqId}`,
             Attributes: {
-                'VisibilityTimeout': '60',
+                'VisibilityTimeout': '5',
                 'MessageRetentionPeriod': '86400'
             }
         };
 
-        // Create a queue for Responses and pass back queueurl
-        // When response is retrieved delete the queue
-        // Maybe incorporate jurisdiction into queue as well
+        console.log(event);
         sqs.createQueue(createParams, async function (err, createQueueResponse) {
+            console.log(createQueueResponse);
             if(err){
                 reject("Create Queue Error", err);                
             } else {
                 const sendParams = {
-                    MessageBody: JSON.stringify({ "Boom":"Shaka" }),
+                    MessageBody: JSON.stringify({ "James":"Bond" }),
                     QueueUrl: createQueueResponse.QueueUrl,
                     MessageAttributes: {
                     RequestId: {
@@ -31,13 +30,12 @@ exports.handler = function (event, context, callback) {
                         StringValue: reqId
                         }                  
                     }
-                };         
+                };                         
+
                 sqs.sendMessage(sendParams, async function (err, sendMessageResponse){
                     if(err) {
                         reject("Send Message Error", err);                
                     } else {
-                        console.log('Message: ', sendMessageResponse);
-                        console.log('Queue Url: ', createQueueResponse.QueueUrl);
                         resolve(createQueueResponse.QueueUrl);
                     }
                 });                    
